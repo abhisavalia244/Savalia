@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin — M/s Savalia Jaysukh M.</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/admin.css">
+</head>
+<body>
+
+<!-- ============ LOGIN ============ -->
+<div id="loginView" class="login-wrap" hidden>
+  <form id="loginForm" class="login-card">
+    <div class="kicker">M/s Savalia Jaysukh M.</div>
+    <h1>Website Admin</h1>
+    <p>Sign in to add and manage works in the List of Works.</p>
+    <label>Password<input type="password" id="loginPw" autocomplete="current-password" required></label>
+    <div class="err" id="loginErr"></div>
+    <button class="btn solid" type="submit">Sign in</button>
+  </form>
+</div>
+
+<!-- ============ DASHBOARD ============ -->
+<div id="dashView" hidden>
+  <header class="admin-head">
+    <div class="wrap head-row">
+      <div>
+        <div class="kicker light">M/s Savalia Jaysukh M. — Website Admin</div>
+        <h1>List of Works</h1>
+      </div>
+      <div class="head-actions">
+        <a class="btn ghost" href="experience.html" target="_blank">View site</a>
+        <button class="btn ghost" id="pwBtn">Change password</button>
+        <button class="btn ghost" id="logoutBtn">Sign out</button>
+      </div>
+    </div>
+    <div class="wrap stats" id="statsLine"></div>
+  </header>
+
+  <main class="wrap admin-main">
+    <div class="admin-tabs">
+      <button class="atab on" data-tab="works">Works</button>
+      <button class="atab" data-tab="content">Text, Details &amp; Clients</button>
+      <button class="atab" data-tab="photos">Photos</button>
+    </div>
+
+    <div id="tab-works">
+    <div class="toolbar">
+      <div class="cat-tabs" id="catTabs"></div>
+      <button class="btn solid" id="addBtn">+ Add a work</button>
+    </div>
+
+    <div id="worksList" class="works-list"></div>
+    </div>
+
+    <div id="tab-content" hidden>
+      <p class="tab-intro">Everything written on the website lives here. Change any text, press <b>Save changes</b>, and the website updates right away. Nothing here can break the design — you are only changing words and the main photo.</p>
+      <form id="siteForm"></form>
+      <fieldset class="site-group"><legend>Clients — the logo wall and client list</legend>
+        <p class="hint" style="margin-bottom:14px">Add or remove clients, write the line shown under each name, and pick a logo from the Photos library if you have one. Clients without a logo appear as a clean name plate — that is normal.</p>
+        <div id="clientsEditor"></div>
+        <button class="btn" id="clientAdd" type="button">+ Add a client</button>
+      </fieldset>
+      <div class="save-bar"><span class="err" id="siteErr"></span><button class="btn solid" id="siteSave" type="button">Save changes</button></div>
+    </div>
+
+    <div id="tab-photos" hidden>
+      <p class="tab-intro">All photographs used on the website. Upload new ones here, then use them in any work. If a work has no photo, the website shows a neat branded plate with the firm’s name instead — never a fake picture.</p>
+      <div class="upload-bar">
+        <input type="file" id="mediaFiles" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+        <button class="btn solid" id="mediaUpload" type="button">Upload photos</button>
+      </div>
+      <div id="mediaGrid" class="media-grid"></div>
+    </div>
+  </main>
+</div>
+
+<!-- ============ WORK FORM (add / edit) ============ -->
+<div id="formModal" class="modal" hidden>
+  <div class="modal-card">
+    <div class="modal-head">
+      <h2 id="formTitle">Add a work</h2>
+      <button class="x" id="formClose" aria-label="Close">&times;</button>
+    </div>
+    <form id="workForm">
+      <input type="hidden" id="f_id">
+      <div class="grid2">
+        <label class="span2">Name of work *
+          <input id="f_title" required placeholder="e.g. Sewage Pumping Station 60 MLD">
+        </label>
+        <label>Category *
+          <select id="f_category">
+            <option value="water">Water / Waste Water</option>
+            <option value="drainage">Drainage</option>
+            <option value="road">Road</option>
+            <option value="pipeline">Pipeline</option>
+            <option value="building">Building</option>
+            <option value="__new">+ New category…</option>
+          </select>
+        </label>
+        <label id="newCatWrap" hidden>New category name
+          <input id="f_newcat" placeholder="e.g. Bridges">
+        </label>
+        <label>Client
+          <input id="f_client" placeholder="Surat Municipal Corporation">
+        </label>
+        <label>Location
+          <input id="f_location" placeholder="e.g. Vesu, Surat">
+        </label>
+        <label>Capacity / size
+          <input id="f_capacity" placeholder="e.g. 60 MLD · 21 lakh litres · 10,370 m">
+        </label>
+        <label>Year completed
+          <input id="f_year" placeholder="e.g. 2024 or 2023–24">
+        </label>
+        <label class="span2">Description / scope of work
+          <textarea id="f_description" rows="4" placeholder="What was built, for whom, and anything notable about the work…"></textarea>
+        </label>
+        <label class="span2">Photograph
+          <span class="file-row">
+            <img id="f_preview" alt="" hidden>
+          </span>
+          <span class="pick-row">
+            <select id="f_image_pick"><option value="">Choose a photo from the library…</option></select>
+            <span class="or">or upload a new one:</span>
+            <input type="file" id="f_image" accept="image/jpeg,image/png,image/webp,image/gif">
+          </span>
+          <span class="hint" id="imgHint">Pick a photo already on the website, or upload a new JPG/PNG (up to 12 MB).</span>
+        </label>
+        <label class="check span2"><input type="checkbox" id="f_removeimg"> Remove current photograph</label>
+        <label class="check span2"><input type="checkbox" id="f_featured"> Feature on the homepage (Selected Works)</label>
+        <label class="span2" id="featNoteWrap" hidden>Homepage note (shown when featured)
+          <textarea id="f_featurednote" rows="3" placeholder="One short paragraph: why this work matters…"></textarea>
+        </label>
+      </div>
+      <div class="err" id="formErr"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="formCancel">Cancel</button>
+        <button type="submit" class="btn solid" id="formSave">Save work</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ============ PASSWORD ============ -->
+<div id="pwModal" class="modal" hidden>
+  <div class="modal-card narrow">
+    <div class="modal-head"><h2>Change password</h2><button class="x" id="pwClose" aria-label="Close">&times;</button></div>
+    <form id="pwForm">
+      <label>Current password<input type="password" id="pw_current" required></label>
+      <label>New password (min. 8 characters)<input type="password" id="pw_next" required minlength="8"></label>
+      <div class="err" id="pwErr"></div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost" id="pwCancel">Cancel</button>
+        <button type="submit" class="btn solid">Update password</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="assets/js/admin.js"></script>
+<div id="toast" class="toast" hidden></div>
+</body>
+</html>

@@ -1,0 +1,124 @@
+{
+ "firmName": "M/s Savalia Jaysukh M.",
+ "firmSub": "Construction · Surat · Est. 1997",
+ "motto": "Quality. Value. Trust.",
+ "phone": "+91 99099 52744",
+ "email": "savaliajm@yahoo.com",
+ "addressShort": "Shop No. 5, Delux Flat, Varachha Main Road, Surat — 395 006",
+ "addressFull": "Shop No. 5, Delux Flat, Opp. Varachha Water Works (Chopati), Varachha Main Road, Surat — 395 006, Gujarat, India",
+ "hours": "08:00 – 20:00",
+ "heroHeadline": "Government construction contractor, Surat — since 1997.",
+ "heroCaption": "Elevated Service Reservoirs ESR-12 and ESR-15, Dumas — 21 lakh litres each, completed 2018–19",
+ "heroImage": "assets/images/hero-3.jpg",
+ "homeIntroHeading": "A government contractor the city has relied on for over twenty-five years",
+ "homeIntro1": "M/s Savalia Jaysukh M. manages the complexity of a construction process from start to finish — creating a positive impact on society and supporting its positive transformation.",
+ "homeIntro2": "The firm builds sewage pumping stations, underground and elevated service reservoirs, institutional buildings, bus stations and RCC roads. Its works connect communities, play a key role in urban and rural development, and provide vital long-term infrastructure for the State Government and the Central Government of India.",
+ "safetyHeading": "Safety is at the core of everything we do",
+ "safetyText": "Safety is one of the firm's most central guiding principles, and the safety of its employees is its greatest responsibility. The firm recognises that its people are its most valuable asset, and is dedicated to providing and maintaining a safe and healthy work environment for all.",
+ "safetyPoints": [
+  {
+   "t": "People first",
+   "d": "Our people are our most valuable asset."
+  },
+  {
+   "t": "A culture of care",
+   "d": "We foster a culture where people truly care about one another."
+  },
+  {
+   "t": "Zero incidents",
+   "d": "Everyone shares in our goal of zero incidents."
+  }
+ ],
+ "aboutHeading": "Founded in 1997 by Jaysukhbhai Savalia",
+ "aboutPara1": "The company was founded in the year 1997 by Jaysukhbhai Savalia, who has been directing the company since the company was founded.",
+ "aboutPara2": "We have provided just-in-time support to government by building high quality Sewage Pumping Stations (SPS), Sluice Regulator Structures, Elevated Service Reservoirs (ESR), Underground Service Reservoirs (UGSR), RCC Roads and Institutional Building Projects for the State Government and Central Government of India.",
+ "aboutPara3": "We work closely with clients and partners. Our projects connect communities, play a key role in urban and rural development, help drive economic growth and provide vital long-term infrastructure.",
+ "servicesHeading": "Specialised in RCC structural works",
+ "servicesText1": "We are specialised in construction of RCC structural works with high quality and uncompromising standards. Our suite of integrated construction services ensures the highest degree of quality, safety, efficiency and innovation on our projects.",
+ "servicesText2": "Works executed include Sewage Pumping Stations (SPS), Sluice Regulator Structures, Elevated Service Reservoirs (ESR), Underground Service Reservoirs (UGSR), Institutional Building Projects, Sewage Treatment Plants, minor dams, reservoirs, RCC roads, flood gate structures and drainage projects.",
+ "aboutSafetyHeading": "The safety of our employees is our greatest responsibility",
+ "aboutSafetyText": "Safety is at the core of everything we do and is one of our most central guiding principles. We recognised that our people are our most valuable asset, and we are dedicated to providing and maintaining a safe and healthy work environment for all.",
+ "clientsIntro": "Twelve clients appear in the firm's record. Most of the work — 36 of 43 projects — has been executed for one client, Surat Municipal Corporation, over more than two decades.",
+ "contactIntro": "For project enquiries, and for sub-contractor, labour and engineer registration, write to us using the form — or reach the office directly.",
+ "footerBlurb": "M/s Savalia Jaysukh M. is a government construction contractor based in Surat, Gujarat, founded in 1997 by Jaysukhbhai Savalia.",
+ "clients": [
+  {
+   "name": "Surat Municipal Corporation",
+   "group": "Municipal & Local Bodies",
+   "note": "36 of the firm's 43 listed works",
+   "logo": "assets/images/clients/smc.png"
+  },
+  {
+   "name": "Nuclear Power Corporation of India",
+   "group": "Central Government",
+   "note": "Raw water reservoir, Kakrapar — 12,500 m3",
+   "logo": "assets/images/clients/npcil.png"
+  },
+  {
+   "name": "Gujarat State Road Transport Corporation",
+   "group": "State Government & Corporations",
+   "note": "Bus station, Bilimora",
+   "logo": "assets/images/clients/gsrtc.jpg"
+  },
+  {
+   "name": "Airport Authority of India",
+   "group": "Central Government",
+   "note": "Named in the firm's client record",
+   "logo": "assets/images/clients/aai.png"
+  },
+  {
+   "name": "All India Radio",
+   "group": "Central Government",
+   "note": "Named in the firm's client record",
+   "logo": "assets/images/clients/air.png"
+  },
+  {
+   "name": "Surat Urban Development Authority",
+   "group": "Municipal & Local Bodies",
+   "note": "Sewage treatment plant, Singanpor",
+   "logo": "assets/images/clients/suda.png"
+  },
+  {
+   "name": "Veer Narmad South Gujarat University",
+   "group": "Institutions & Private",
+   "note": "Underground service reservoir, Surat — 10 lakh litres",
+   "logo": "assets/images/clients/vnsgu.png"
+  },
+  {
+   "name": "Gujarat State Police Housing Corp. Ltd.",
+   "group": "State Government & Corporations",
+   "note": "RCC road works, Vadodara",
+   "logo": "assets/images/clients/gphc.png"
+  },
+  {
+   "name": "Road & Building Division, Gujarat",
+   "group": "State Government & Corporations",
+   "note": "Named in the firm's client record",
+   "logo": "assets/images/clients/randb.png"
+  },
+  {
+   "name": "Kadodara Nagar Palika",
+   "group": "Municipal & Local Bodies",
+   "note": "RCC road, Kadodara",
+   "logo": "assets/images/clients/kadodara.png"
+  },
+  {
+   "name": "Bharuch Nagarpalika",
+   "group": "Municipal & Local Bodies",
+   "note": "Named in the firm's client record",
+   "logo": "assets/images/clients/bharuch.png"
+  },
+  {
+   "name": "Vyara Nagar Palika",
+   "group": "Municipal & Local Bodies",
+   "note": "Named in the firm's client record",
+   "logo": "assets/images/clients/vyara.png"
+  }
+ ],
+ "sp1t": "People first",
+ "sp1d": "Our people are our most valuable asset.",
+ "sp2t": "A culture of care",
+ "sp2d": "We foster a culture where people truly care about one another.",
+ "sp3t": "Zero incidents",
+ "sp3d": "Everyone shares in our goal of zero incidents."
+}

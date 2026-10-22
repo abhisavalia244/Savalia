@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Experience — List of Works | M/s Savalia Jaysukh M.</title><meta name="description" content="Complete list of 43 works executed by M/s Savalia Jaysukh M.: project, location, client and capacity — sewage pumping stations, reservoirs, RCC roads, buildings, drainage and pipelines.">
+<link rel="icon" href="assets/images/logo.jpg">
+<link rel="stylesheet" href="assets/css/fonts.css">
+<link rel="stylesheet" href="assets/css/styles.css"></head><body><div class="utility"><div class="wrap"><span data-site="addressShort">Shop No. 5, Delux Flat, Varachha Main Road, Surat — 395 006</span><span><a href="mailto:savaliajm@yahoo.com" data-site="email">savaliajm@yahoo.com</a> &nbsp;·&nbsp; Working hours <span data-site="hours">08:00 – 20:00</span></span></div></div>
+<header><div class="wrap nav">
+  <a class="wordmark" href="index.html"><span class="firm" data-site="firmName">M/s Savalia Jaysukh M.</span><span class="sub" style="display:block" data-site="firmSub">Construction · Surat · Est. 1997</span></a>
+  <button class="burger" aria-label="Menu">&#9776;</button>
+  <nav class="main"><a class="" href="index.html">Home</a><a class="" href="about.html">The Firm</a><a class="" href="experience.html">Experience</a><a class="" href="clients.html">Clients</a><a class="" href="contact.html">Contact</a></nav>
+  <div class="nav-phone">Enquiries <b data-site="phone">+91 99099 52744</b></div>
+</div></header>
+<div class="pagehead"><div class="wrap"><span class="label" id="wCat">Work</span><h1 id="wTitle" style="font-size:clamp(30px,4.2vw,46px)">Loading…</h1>
+<p id="wSub"></p></div></div>
+<section style="padding-top:48px"><div class="wrap">
+  <div id="wBody">
+    <div class="split" style="align-items:start">
+      <div>
+        <img id="wImg" class="workdetail-img" alt="" style="display:none">
+        <div id="wPlate" class="workdetail-plate" style="display:none"><img src="assets/images/logo.jpg" alt=""><div class="wp-name">M/s Savalia Jaysukh M.</div><div class="wp-sub" id="wPlateCat"></div><p>No photograph of this work is available yet. The full record is given alongside.</p></div>
+        <p class="body-text" id="wDesc" style="margin-top:22px"></p>
+      </div>
+      <div class="facts"><h4>Work Record</h4><dl id="wSpec"></dl></div>
+    </div>
+    <p style="margin-top:34px"><a class="btn" href="experience.html">&larr; Full List of Works</a></p>
+  </div>
+</div></section>
+<footer><div class="wrap">
+  <div class="firm-big" data-site="motto">Quality. Value. Trust.</div>
+  <div class="foot-grid">
+    <div><h5>The Firm</h5><p style="max-width:38ch;font-size:15px" data-site="footerBlurb">M/s Savalia Jaysukh M. is a government construction contractor based in Surat, Gujarat, founded in 1997 by Jaysukhbhai Savalia.</p></div>
+    <div><h5>Pages</h5><ul><li><a href="index.html">Home</a></li><li><a href="about.html">The Firm</a></li><li><a href="experience.html">Experience</a></li><li><a href="clients.html">Clients</a></li><li><a href="contact.html">Contact &amp; Inquiry</a></li></ul></div>
+    <div><h5>Office</h5><ul><li data-site="addressFull">Shop No. 5, Delux Flat, Opp. Varachha Water Works (Chopati), Varachha Main Road, Surat — 395 006, Gujarat, India</li><li><a href="tel:+919909952744" data-site="phone">+91 99099 52744</a></li><li><a href="mailto:savaliajm@yahoo.com" data-site="email">savaliajm@yahoo.com</a></li></ul></div>
+  </div>
+  <div class="foot-base"><span>&copy; <span id="year"></span> M/s Savalia Jaysukh M.</span><span>Surat · Gujarat · India</span></div>
+</div></footer><script src="assets/js/projects-data.js"></script><script src="assets/js/main.js"></script><script>
+(async () => {
+  const id = new URLSearchParams(location.search).get('id');
+  const esc = s => (s||'').toString().replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  let w = null;
+  try { const r = await fetch('/api/works/' + encodeURIComponent(id)); if (r.ok) w = await r.json(); } catch(e) {}
+  if (!w && typeof PROJECTS !== 'undefined' && id && id[0] === 'p') {
+    const p = PROJECTS.find(x => 'p' + x.no === id);
+    if (p) w = { title: p.title, categoryLabel: p.category, client: p.client, location: p.location, capacity: p.capacity_norm, year: '', description: p.note || '', image: null };
+  }
+  if (!w) { document.getElementById('wTitle').textContent = 'Work not found'; return; }
+  document.title = w.title + ' — M/s Savalia Jaysukh M.';
+  document.getElementById('wCat').textContent = w.categoryLabel || 'Work';
+  document.getElementById('wTitle').textContent = w.title;
+  document.getElementById('wSub').textContent = [w.location, w.client].filter(Boolean).join(' — ');
+  const rows = [['Client', w.client], ['Location', w.location], ['Capacity', w.capacity], ['Type', w.categoryLabel], ['Completed', w.year]].filter(r => r[1]);
+  document.getElementById('wSpec').innerHTML = rows.map(r => `<div><dt>${esc(r[0])}</dt><dd>${esc(r[1])}</dd></div>`).join('');
+  if (w.image) { const img = document.getElementById('wImg'); img.src = w.image; img.alt = w.title; img.style.display = 'block'; } else { const pl = document.getElementById('wPlate'); pl.style.display = 'flex'; document.getElementById('wPlateCat').textContent = (w.categoryLabel || '') + ' · Surat, Gujarat'; }
+  document.getElementById('wDesc').textContent = w.featuredNote || w.description || 'This work is recorded in the firm\'s List of Works. A fuller description will be added by the firm.';
+})();
+</script>
+</body></html>
